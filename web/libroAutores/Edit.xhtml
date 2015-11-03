@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="LibroAutoresEditDlg" widgetVar="LibroAutoresEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditLibroAutoresTitle}">
+            <h:form id="LibroAutoresEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{libroAutoresController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditLibroAutoresLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{libroAutoresController.selected.id}" title="#{bundle.EditLibroAutoresTitle_id}" required="true" requiredMessage="#{bundle.EditLibroAutoresRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditLibroAutoresLabel_investigadorIdentificacion}" for="investigadorIdentificacion" />
+                        <p:selectOneMenu id="investigadorIdentificacion" value="#{libroAutoresController.selected.investigadorIdentificacion}" required="true" requiredMessage="#{bundle.EditLibroAutoresRequiredMessage_investigadorIdentificacion}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{investigadorController.itemsAvailableSelectOne}"
+                                           var="investigadorIdentificacionItem"
+                                           itemValue="#{investigadorIdentificacionItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditLibroAutoresLabel_libroId}" for="libroId" />
+                        <p:selectOneMenu id="libroId" value="#{libroAutoresController.selected.libroId}" required="true" requiredMessage="#{bundle.EditLibroAutoresRequiredMessage_libroId}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{libroController.itemsAvailableSelectOne}"
+                                           var="libroIdItem"
+                                           itemValue="#{libroIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{libroAutoresController.update}" value="#{bundle.Save}" update="display,:LibroAutoresListForm:datalist,:growl" oncomplete="handleSubmit(args, 'LibroAutoresEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="LibroAutoresEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

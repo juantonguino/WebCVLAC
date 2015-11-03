@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="NivelFormacionCreateDlg" widgetVar="NivelFormacionCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateNivelFormacionTitle}">
+            <h:form id="NivelFormacionCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{nivelFormacionController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateNivelFormacionLabel_idEstudiosRealizados}" for="idEstudiosRealizados" />
+                        <p:inputText id="idEstudiosRealizados" value="#{nivelFormacionController.selected.idEstudiosRealizados}" title="#{bundle.CreateNivelFormacionTitle_idEstudiosRealizados}" required="true" requiredMessage="#{bundle.CreateNivelFormacionRequiredMessage_idEstudiosRealizados}"/>
+                        <p:outputLabel value="#{bundle.CreateNivelFormacionLabel_titulo}" for="titulo" />
+                        <p:inputText id="titulo" value="#{nivelFormacionController.selected.titulo}" title="#{bundle.CreateNivelFormacionTitle_titulo}" required="true" requiredMessage="#{bundle.CreateNivelFormacionRequiredMessage_titulo}"/>
+                        <p:outputLabel value="#{bundle.CreateNivelFormacionLabel_nombreTrabajoGrado}" for="nombreTrabajoGrado" />
+                        <p:inputText id="nombreTrabajoGrado" value="#{nivelFormacionController.selected.nombreTrabajoGrado}" title="#{bundle.CreateNivelFormacionTitle_nombreTrabajoGrado}" required="true" requiredMessage="#{bundle.CreateNivelFormacionRequiredMessage_nombreTrabajoGrado}"/>
+                        <p:outputLabel value="#{bundle.CreateNivelFormacionLabel_anioInicio}" for="anioInicio" />
+                        <p:calendar id="anioInicio" pattern="MM/dd/yyyy" value="#{nivelFormacionController.selected.anioInicio}" title="#{bundle.EditNivelFormacionTitle_anioInicio}" required="true" requiredMessage="#{bundle.EditNivelFormacionRequiredMessage_anioInicio}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateNivelFormacionLabel_anioFin}" for="anioFin" />
+                        <p:calendar id="anioFin" pattern="MM/dd/yyyy" value="#{nivelFormacionController.selected.anioFin}" title="#{bundle.EditNivelFormacionTitle_anioFin}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateNivelFormacionLabel_investigadorIdentificacion}" for="investigadorIdentificacion" />
+                        <p:selectOneMenu id="investigadorIdentificacion" value="#{nivelFormacionController.selected.investigadorIdentificacion}" required="true" requiredMessage="#{bundle.EditNivelFormacionRequiredMessage_investigadorIdentificacion}">
+                            <f:selectItems value="#{investigadorController.itemsAvailableSelectOne}"
+                                           var="investigadorIdentificacionItem"
+                                           itemValue="#{investigadorIdentificacionItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{nivelFormacionController.create}" value="#{bundle.Save}" update="display,:NivelFormacionListForm:datalist,:growl" oncomplete="handleSubmit(args,'NivelFormacionCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="NivelFormacionCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

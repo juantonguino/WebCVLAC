@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ArticuloViewDlg" widgetVar="ArticuloViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewArticuloTitle}">
+            <h:form id="ArticuloViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{articuloController.selected != null}">
+                        <h:outputText value="#{bundle.ViewArticuloLabel_idArticulo}"/>
+                        <h:outputText value="#{articuloController.selected.idArticulo}" title="#{bundle.ViewArticuloTitle_idArticulo}"/>
+                        <h:outputText value="#{bundle.ViewArticuloLabel_anioPublicacion}"/>
+                        <h:outputText value="#{articuloController.selected.anioPublicacion}" title="#{bundle.ViewArticuloTitle_anioPublicacion}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewArticuloLabel_nombreArticulo}"/>
+                        <h:outputText value="#{articuloController.selected.nombreArticulo}" title="#{bundle.ViewArticuloTitle_nombreArticulo}"/>
+                        <h:outputText value="#{bundle.ViewArticuloLabel_revistaNombre}"/>
+                        <h:outputText value="#{articuloController.selected.revistaNombre}" title="#{bundle.ViewArticuloTitle_revistaNombre}"/>
+                        <h:outputText value="#{bundle.ViewArticuloLabel_trabajoInvestigacionId}"/>
+                        <h:outputText value="#{articuloController.selected.trabajoInvestigacionId}" title="#{bundle.ViewArticuloTitle_trabajoInvestigacionId}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ArticuloViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

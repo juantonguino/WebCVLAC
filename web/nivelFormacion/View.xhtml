@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="NivelFormacionViewDlg" widgetVar="NivelFormacionViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewNivelFormacionTitle}">
+            <h:form id="NivelFormacionViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{nivelFormacionController.selected != null}">
+                        <h:outputText value="#{bundle.ViewNivelFormacionLabel_idEstudiosRealizados}"/>
+                        <h:outputText value="#{nivelFormacionController.selected.idEstudiosRealizados}" title="#{bundle.ViewNivelFormacionTitle_idEstudiosRealizados}"/>
+                        <h:outputText value="#{bundle.ViewNivelFormacionLabel_titulo}"/>
+                        <h:outputText value="#{nivelFormacionController.selected.titulo}" title="#{bundle.ViewNivelFormacionTitle_titulo}"/>
+                        <h:outputText value="#{bundle.ViewNivelFormacionLabel_nombreTrabajoGrado}"/>
+                        <h:outputText value="#{nivelFormacionController.selected.nombreTrabajoGrado}" title="#{bundle.ViewNivelFormacionTitle_nombreTrabajoGrado}"/>
+                        <h:outputText value="#{bundle.ViewNivelFormacionLabel_anioInicio}"/>
+                        <h:outputText value="#{nivelFormacionController.selected.anioInicio}" title="#{bundle.ViewNivelFormacionTitle_anioInicio}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewNivelFormacionLabel_anioFin}"/>
+                        <h:outputText value="#{nivelFormacionController.selected.anioFin}" title="#{bundle.ViewNivelFormacionTitle_anioFin}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewNivelFormacionLabel_investigadorIdentificacion}"/>
+                        <h:outputText value="#{nivelFormacionController.selected.investigadorIdentificacion}" title="#{bundle.ViewNivelFormacionTitle_investigadorIdentificacion}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="NivelFormacionViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PonenciaViewDlg" widgetVar="PonenciaViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewPonenciaTitle}">
+            <h:form id="PonenciaViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{ponenciaController.selected != null}">
+                        <h:outputText value="#{bundle.ViewPonenciaLabel_id}"/>
+                        <h:outputText value="#{ponenciaController.selected.id}" title="#{bundle.ViewPonenciaTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewPonenciaLabel_nombre}"/>
+                        <h:outputText value="#{ponenciaController.selected.nombre}" title="#{bundle.ViewPonenciaTitle_nombre}"/>
+                        <h:outputText value="#{bundle.ViewPonenciaLabel_anio}"/>
+                        <h:outputText value="#{ponenciaController.selected.anio}" title="#{bundle.ViewPonenciaTitle_anio}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewPonenciaLabel_eventoId}"/>
+                        <h:outputText value="#{ponenciaController.selected.eventoId}" title="#{bundle.ViewPonenciaTitle_eventoId}"/>
+                        <h:outputText value="#{bundle.ViewPonenciaLabel_trabajoInvestigacionId}"/>
+                        <h:outputText value="#{ponenciaController.selected.trabajoInvestigacionId}" title="#{bundle.ViewPonenciaTitle_trabajoInvestigacionId}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="PonenciaViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

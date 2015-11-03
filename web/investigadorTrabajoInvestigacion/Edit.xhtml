@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="InvestigadorTrabajoInvestigacionEditDlg" widgetVar="InvestigadorTrabajoInvestigacionEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditInvestigadorTrabajoInvestigacionTitle}">
+            <h:form id="InvestigadorTrabajoInvestigacionEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{investigadorTrabajoInvestigacionController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditInvestigadorTrabajoInvestigacionLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{investigadorTrabajoInvestigacionController.selected.id}" title="#{bundle.EditInvestigadorTrabajoInvestigacionTitle_id}" required="true" requiredMessage="#{bundle.EditInvestigadorTrabajoInvestigacionRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditInvestigadorTrabajoInvestigacionLabel_investigadorIdentificacion}" for="investigadorIdentificacion" />
+                        <p:selectOneMenu id="investigadorIdentificacion" value="#{investigadorTrabajoInvestigacionController.selected.investigadorIdentificacion}" required="true" requiredMessage="#{bundle.EditInvestigadorTrabajoInvestigacionRequiredMessage_investigadorIdentificacion}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{investigadorController.itemsAvailableSelectOne}"
+                                           var="investigadorIdentificacionItem"
+                                           itemValue="#{investigadorIdentificacionItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditInvestigadorTrabajoInvestigacionLabel_trabajoInvestigacionId}" for="trabajoInvestigacionId" />
+                        <p:selectOneMenu id="trabajoInvestigacionId" value="#{investigadorTrabajoInvestigacionController.selected.trabajoInvestigacionId}" required="true" requiredMessage="#{bundle.EditInvestigadorTrabajoInvestigacionRequiredMessage_trabajoInvestigacionId}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{trabajoInvestigacionController.itemsAvailableSelectOne}"
+                                           var="trabajoInvestigacionIdItem"
+                                           itemValue="#{trabajoInvestigacionIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{investigadorTrabajoInvestigacionController.update}" value="#{bundle.Save}" update="display,:InvestigadorTrabajoInvestigacionListForm:datalist,:growl" oncomplete="handleSubmit(args, 'InvestigadorTrabajoInvestigacionEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="InvestigadorTrabajoInvestigacionEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

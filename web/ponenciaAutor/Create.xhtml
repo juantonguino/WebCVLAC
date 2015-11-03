@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PonenciaAutorCreateDlg" widgetVar="PonenciaAutorCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreatePonenciaAutorTitle}">
+            <h:form id="PonenciaAutorCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{ponenciaAutorController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreatePonenciaAutorLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{ponenciaAutorController.selected.id}" title="#{bundle.CreatePonenciaAutorTitle_id}" required="true" requiredMessage="#{bundle.CreatePonenciaAutorRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreatePonenciaAutorLabel_investigadorIdentificacion}" for="investigadorIdentificacion" />
+                        <p:selectOneMenu id="investigadorIdentificacion" value="#{ponenciaAutorController.selected.investigadorIdentificacion}" required="true" requiredMessage="#{bundle.EditPonenciaAutorRequiredMessage_investigadorIdentificacion}">
+                            <f:selectItems value="#{investigadorController.itemsAvailableSelectOne}"
+                                           var="investigadorIdentificacionItem"
+                                           itemValue="#{investigadorIdentificacionItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreatePonenciaAutorLabel_ponenciaId}" for="ponenciaId" />
+                        <p:selectOneMenu id="ponenciaId" value="#{ponenciaAutorController.selected.ponenciaId}" required="true" requiredMessage="#{bundle.EditPonenciaAutorRequiredMessage_ponenciaId}">
+                            <f:selectItems value="#{ponenciaController.itemsAvailableSelectOne}"
+                                           var="ponenciaIdItem"
+                                           itemValue="#{ponenciaIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{ponenciaAutorController.create}" value="#{bundle.Save}" update="display,:PonenciaAutorListForm:datalist,:growl" oncomplete="handleSubmit(args,'PonenciaAutorCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PonenciaAutorCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

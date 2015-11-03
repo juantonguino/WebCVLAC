@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PonenciaEditDlg" widgetVar="PonenciaEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditPonenciaTitle}">
+            <h:form id="PonenciaEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{ponenciaController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditPonenciaLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{ponenciaController.selected.id}" title="#{bundle.EditPonenciaTitle_id}" required="true" requiredMessage="#{bundle.EditPonenciaRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditPonenciaLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{ponenciaController.selected.nombre}" title="#{bundle.EditPonenciaTitle_nombre}" required="true" requiredMessage="#{bundle.EditPonenciaRequiredMessage_nombre}"/>
+                        <p:outputLabel value="#{bundle.EditPonenciaLabel_anio}" for="anio" />
+                        <p:calendar id="anio" pattern="MM/dd/yyyy" value="#{ponenciaController.selected.anio}" title="#{bundle.EditPonenciaTitle_anio}" required="true" requiredMessage="#{bundle.EditPonenciaRequiredMessage_anio}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditPonenciaLabel_eventoId}" for="eventoId" />
+                        <p:selectOneMenu id="eventoId" value="#{ponenciaController.selected.eventoId}" required="true" requiredMessage="#{bundle.EditPonenciaRequiredMessage_eventoId}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{eventoController.itemsAvailableSelectOne}"
+                                           var="eventoIdItem"
+                                           itemValue="#{eventoIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditPonenciaLabel_trabajoInvestigacionId}" for="trabajoInvestigacionId" />
+                        <p:selectOneMenu id="trabajoInvestigacionId" value="#{ponenciaController.selected.trabajoInvestigacionId}" required="true" requiredMessage="#{bundle.EditPonenciaRequiredMessage_trabajoInvestigacionId}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{trabajoInvestigacionController.itemsAvailableSelectOne}"
+                                           var="trabajoInvestigacionIdItem"
+                                           itemValue="#{trabajoInvestigacionIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{ponenciaController.update}" value="#{bundle.Save}" update="display,:PonenciaListForm:datalist,:growl" oncomplete="handleSubmit(args, 'PonenciaEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PonenciaEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
