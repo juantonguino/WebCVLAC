@@ -119,7 +119,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entidades.Usuario[ nombre=" + nombre + " ]";
+        return nombre+":"+contrasenia;
     }
     
 }

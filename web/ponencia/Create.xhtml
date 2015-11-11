@@ -12,8 +12,6 @@
             <h:form id="PonenciaCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{ponenciaController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreatePonenciaLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{ponenciaController.selected.id}" title="#{bundle.CreatePonenciaTitle_id}" required="true" requiredMessage="#{bundle.CreatePonenciaRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreatePonenciaLabel_nombre}" for="nombre" />
                         <p:inputText id="nombre" value="#{ponenciaController.selected.nombre}" title="#{bundle.CreatePonenciaTitle_nombre}" required="true" requiredMessage="#{bundle.CreatePonenciaRequiredMessage_nombre}"/>
                         <p:outputLabel value="#{bundle.CreatePonenciaLabel_anio}" for="anio" />

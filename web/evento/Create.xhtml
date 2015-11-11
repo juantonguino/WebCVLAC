@@ -12,8 +12,6 @@
             <h:form id="EventoCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{eventoController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateEventoLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{eventoController.selected.id}" title="#{bundle.CreateEventoTitle_id}" required="true" requiredMessage="#{bundle.CreateEventoRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreateEventoLabel_lugar}" for="lugar" />
                         <p:inputText id="lugar" value="#{eventoController.selected.lugar}" title="#{bundle.CreateEventoTitle_lugar}" required="true" requiredMessage="#{bundle.CreateEventoRequiredMessage_lugar}"/>
                         <p:outputLabel value="#{bundle.CreateEventoLabel_fechaInicio}" for="fechaInicio" />

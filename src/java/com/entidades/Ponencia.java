@@ -150,7 +150,7 @@ public class Ponencia implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entidades.Ponencia[ id=" + id + " ]";
+        return nombre+":"+anio;
     }
     
 }

@@ -12,8 +12,6 @@
             <h:form id="NivelFormacionCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{nivelFormacionController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateNivelFormacionLabel_idEstudiosRealizados}" for="idEstudiosRealizados" />
-                        <p:inputText id="idEstudiosRealizados" value="#{nivelFormacionController.selected.idEstudiosRealizados}" title="#{bundle.CreateNivelFormacionTitle_idEstudiosRealizados}" required="true" requiredMessage="#{bundle.CreateNivelFormacionRequiredMessage_idEstudiosRealizados}"/>
                         <p:outputLabel value="#{bundle.CreateNivelFormacionLabel_titulo}" for="titulo" />
                         <p:inputText id="titulo" value="#{nivelFormacionController.selected.titulo}" title="#{bundle.CreateNivelFormacionTitle_titulo}" required="true" requiredMessage="#{bundle.CreateNivelFormacionRequiredMessage_titulo}"/>
                         <p:outputLabel value="#{bundle.CreateNivelFormacionLabel_nombreTrabajoGrado}" for="nombreTrabajoGrado" />

@@ -148,7 +148,7 @@ public class Libro implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entidades.Libro[ id=" + id + " ]";
+        return titulo+":"+anioPublicacin;
     }
     
 }

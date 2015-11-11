@@ -171,7 +171,7 @@ public class Evento implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entidades.Evento[ id=" + id + " ]";
+        return lugar+":"+fechaInicio;
     }
     
 }

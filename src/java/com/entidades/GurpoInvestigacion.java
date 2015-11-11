@@ -122,7 +122,7 @@ public class GurpoInvestigacion implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entidades.GurpoInvestigacion[ nombre=" + nombre + " ]";
+        return nombre;
     }
     
 }

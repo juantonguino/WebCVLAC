@@ -118,7 +118,7 @@ public class Revista implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entidades.Revista[ nombre=" + nombre + " ]";
+        return nombre;
     }
     
 }

@@ -150,7 +150,7 @@ public class Articulo implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entidades.Articulo[ idArticulo=" + idArticulo + " ]";
+        return nombreArticulo+":"+anioPublicacion;
     }
     
 }

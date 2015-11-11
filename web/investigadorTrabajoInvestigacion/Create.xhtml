@@ -12,8 +12,6 @@
             <h:form id="InvestigadorTrabajoInvestigacionCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{investigadorTrabajoInvestigacionController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateInvestigadorTrabajoInvestigacionLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{investigadorTrabajoInvestigacionController.selected.id}" title="#{bundle.CreateInvestigadorTrabajoInvestigacionTitle_id}" required="true" requiredMessage="#{bundle.CreateInvestigadorTrabajoInvestigacionRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreateInvestigadorTrabajoInvestigacionLabel_investigadorIdentificacion}" for="investigadorIdentificacion" />
                         <p:selectOneMenu id="investigadorIdentificacion" value="#{investigadorTrabajoInvestigacionController.selected.investigadorIdentificacion}" required="true" requiredMessage="#{bundle.EditInvestigadorTrabajoInvestigacionRequiredMessage_investigadorIdentificacion}">
                             <f:selectItems value="#{investigadorController.itemsAvailableSelectOne}"

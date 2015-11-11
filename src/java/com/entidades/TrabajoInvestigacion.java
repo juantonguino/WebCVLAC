@@ -174,7 +174,7 @@ public class TrabajoInvestigacion implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entidades.TrabajoInvestigacion[ id=" + id + " ]";
+        return titulo;
     }
     
 }

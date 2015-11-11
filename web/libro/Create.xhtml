@@ -12,8 +12,6 @@
             <h:form id="LibroCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{libroController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateLibroLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{libroController.selected.id}" title="#{bundle.CreateLibroTitle_id}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreateLibroLabel_titulo}" for="titulo" />
                         <p:inputText id="titulo" value="#{libroController.selected.titulo}" title="#{bundle.CreateLibroTitle_titulo}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_titulo}"/>
                         <p:outputLabel value="#{bundle.CreateLibroLabel_anioPublicacin}" for="anioPublicacin" />

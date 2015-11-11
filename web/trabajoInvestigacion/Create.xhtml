@@ -12,8 +12,6 @@
             <h:form id="TrabajoInvestigacionCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{trabajoInvestigacionController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateTrabajoInvestigacionLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{trabajoInvestigacionController.selected.id}" title="#{bundle.CreateTrabajoInvestigacionTitle_id}" required="true" requiredMessage="#{bundle.CreateTrabajoInvestigacionRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreateTrabajoInvestigacionLabel_titulo}" for="titulo" />
                         <p:inputText id="titulo" value="#{trabajoInvestigacionController.selected.titulo}" title="#{bundle.CreateTrabajoInvestigacionTitle_titulo}" required="true" requiredMessage="#{bundle.CreateTrabajoInvestigacionRequiredMessage_titulo}"/>
                         <p:outputLabel value="#{bundle.CreateTrabajoInvestigacionLabel_fechaInicio}" for="fechaInicio" />

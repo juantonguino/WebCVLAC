@@ -151,7 +151,7 @@ public class NivelFormacion implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entidades.NivelFormacion[ idEstudiosRealizados=" + idEstudiosRealizados + " ]";
+        return titulo;
     }
     
 }

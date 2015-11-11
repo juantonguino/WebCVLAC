@@ -12,8 +12,6 @@
             <h:form id="LibroAutoresCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{libroAutoresController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateLibroAutoresLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{libroAutoresController.selected.id}" title="#{bundle.CreateLibroAutoresTitle_id}" required="true" requiredMessage="#{bundle.CreateLibroAutoresRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreateLibroAutoresLabel_investigadorIdentificacion}" for="investigadorIdentificacion" />
                         <p:selectOneMenu id="investigadorIdentificacion" value="#{libroAutoresController.selected.investigadorIdentificacion}" required="true" requiredMessage="#{bundle.EditLibroAutoresRequiredMessage_investigadorIdentificacion}">
                             <f:selectItems value="#{investigadorController.itemsAvailableSelectOne}"

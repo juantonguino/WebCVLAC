@@ -203,7 +203,7 @@ public class Investigador implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entidades.Investigador[ identificacion=" + identificacion + " ]";
+        return identificacion+":"+nombres+" "+apellidos;
     }
     
 }
