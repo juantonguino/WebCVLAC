@@ -17,7 +17,13 @@
                         <p:outputLabel value="#{bundle.EditRevistaLabel_indexada}" for="indexada" />
                         <p:selectBooleanCheckbox id="indexada" value="#{revistaController.selected.indexada}" required="true" requiredMessage="#{bundle.EditRevistaRequiredMessage_indexada}"/>
                         <p:outputLabel value="#{bundle.EditRevistaLabel_categorizacion}" for="categorizacion" />
-                        <p:inputText id="categorizacion" value="#{revistaController.selected.categorizacion}" title="#{bundle.EditRevistaTitle_categorizacion}" />
+                        <p:selectOneMenu id="categorizacion" value="#{revistaController.selected.categorizacion}" title="#{bundle.EditRevistaTitle_categorizacion}">
+                            <f:selectItem itemLabel="No Aplica" itemValue="" />
+                            <f:selectItem itemLabel="C" itemValue="C" />
+                            <f:selectItem itemLabel="B" itemValue="B" />
+                            <f:selectItem itemLabel="A" itemValue="A" />
+                            <f:selectItem itemLabel="A1" itemValue="A1" />
+                        </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{revistaController.update}" value="#{bundle.Save}" update="display,:RevistaListForm:datalist,:growl" oncomplete="handleSubmit(args, 'RevistaEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="RevistaEditDialog.hide()"/>

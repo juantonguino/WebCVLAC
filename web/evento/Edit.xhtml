@@ -21,9 +21,18 @@
                         <p:outputLabel value="#{bundle.EditEventoLabel_fechaFin}" for="fechaFin" />
                         <p:calendar id="fechaFin" pattern="MM/dd/yyyy" value="#{eventoController.selected.fechaFin}" title="#{bundle.EditEventoTitle_fechaFin}" required="true" requiredMessage="#{bundle.EditEventoRequiredMessage_fechaFin}" showOn="button"/>
                         <p:outputLabel value="#{bundle.EditEventoLabel_tipo}" for="tipo" />
-                        <p:inputText id="tipo" value="#{eventoController.selected.tipo}" title="#{bundle.EditEventoTitle_tipo}" required="true" requiredMessage="#{bundle.EditEventoRequiredMessage_tipo}"/>
+                        <p:selectOneMenu id="tipo" value="#{eventoController.selected.tipo}" title="#{bundle.EditEventoTitle_tipo}" required="true" requiredMessage="#{bundle.EditEventoRequiredMessage_tipo}">
+                            <f:selectItem itemLabel="Congreso" itemValue="Congreso" />
+                            <f:selectItem itemLabel="Seminario" itemValue="Seminario" />
+                            <f:selectItem itemLabel="Foro" itemValue="Foro" />
+                            <f:selectItem itemLabel="Simposio" itemValue="Simposio" />
+                            <f:selectItem itemLabel="Otro" itemValue="Otro" />
+                        </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.EditEventoLabel_caracter}" for="caracter" />
-                        <p:inputText id="caracter" value="#{eventoController.selected.caracter}" title="#{bundle.EditEventoTitle_caracter}" required="true" requiredMessage="#{bundle.EditEventoRequiredMessage_caracter}"/>
+                        <p:selectOneMenu id="caracter" value="#{eventoController.selected.caracter}" title="#{bundle.EditEventoTitle_caracter}" required="true" requiredMessage="#{bundle.EditEventoRequiredMessage_caracter}">
+                            <f:selectItem itemLabel="Nacional" itemValue="Nacional" />
+                            <f:selectItem itemLabel="Internacional" itemValue="Internacional" />
+                        </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{eventoController.update}" value="#{bundle.Save}" update="display,:EventoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EventoEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="EventoEditDialog.hide()"/>

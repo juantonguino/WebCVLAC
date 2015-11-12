@@ -17,7 +17,14 @@
                         <p:outputLabel value="#{bundle.EditGurpoInvestigacionLabel_lineaInvestigacion}" for="lineaInvestigacion" />
                         <p:inputText id="lineaInvestigacion" value="#{gurpoInvestigacionController.selected.lineaInvestigacion}" title="#{bundle.EditGurpoInvestigacionTitle_lineaInvestigacion}" required="true" requiredMessage="#{bundle.EditGurpoInvestigacionRequiredMessage_lineaInvestigacion}"/>
                         <p:outputLabel value="#{bundle.EditGurpoInvestigacionLabel_categorizacionGrupo}" for="categorizacionGrupo" />
-                        <p:inputText id="categorizacionGrupo" value="#{gurpoInvestigacionController.selected.categorizacionGrupo}" title="#{bundle.EditGurpoInvestigacionTitle_categorizacionGrupo}" required="true" requiredMessage="#{bundle.EditGurpoInvestigacionRequiredMessage_categorizacionGrupo}"/>
+                        <p:selectOneMenu id="categorizacionGrupo" value="#{gurpoInvestigacionController.selected.categorizacionGrupo}" title="#{bundle.EditGurpoInvestigacionTitle_categorizacionGrupo}" required="true" requiredMessage="#{bundle.EditGurpoInvestigacionRequiredMessage_categorizacionGrupo}">
+                            <f:selectItem itemLabel="No Reconocido" itemValue="No Reconocido" />
+                            <f:selectItem itemLabel="D" itemValue="D" />
+                            <f:selectItem itemLabel="C" itemValue="C" />
+                            <f:selectItem itemLabel="B" itemValue="B" />
+                            <f:selectItem itemLabel="A" itemValue="A" />
+                            <f:selectItem itemLabel="A1" itemValue="A1" />
+                        </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{gurpoInvestigacionController.update}" value="#{bundle.Save}" update="display,:GurpoInvestigacionListForm:datalist,:growl" oncomplete="handleSubmit(args, 'GurpoInvestigacionEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="GurpoInvestigacionEditDialog.hide()"/>
