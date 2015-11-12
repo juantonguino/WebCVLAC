@@ -37,13 +37,13 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListLibroAutoresTitle_investigadorIdentificacion}"/>
                             </f:facet>
-                            <h:outputText value="#{item.investigadorIdentificacion}"/>
+                            <h:outputText value="#{item.investigadorIdentificacion.toString()}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListLibroAutoresTitle_libroId}"/>
                             </f:facet>
-                            <h:outputText value="#{item.libroId}"/>
+                            <h:outputText value="#{item.libroId.toString()}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{libroAutoresController.prepareCreate}" update=":LibroAutoresCreateForm" oncomplete="PF('LibroAutoresCreateDialog').show()"/>

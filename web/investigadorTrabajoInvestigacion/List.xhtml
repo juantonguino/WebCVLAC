@@ -37,13 +37,13 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListInvestigadorTrabajoInvestigacionTitle_investigadorIdentificacion}"/>
                             </f:facet>
-                            <h:outputText value="#{item.investigadorIdentificacion}"/>
+                            <h:outputText value="#{item.investigadorIdentificacion.toString()}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListInvestigadorTrabajoInvestigacionTitle_trabajoInvestigacionId}"/>
                             </f:facet>
-                            <h:outputText value="#{item.trabajoInvestigacionId}"/>
+                            <h:outputText value="#{item.trabajoInvestigacionId.toString()}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{investigadorTrabajoInvestigacionController.prepareCreate}" update=":InvestigadorTrabajoInvestigacionCreateForm" oncomplete="PF('InvestigadorTrabajoInvestigacionCreateDialog').show()"/>

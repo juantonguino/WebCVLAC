@@ -37,13 +37,13 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListPonenciaAutorTitle_investigadorIdentificacion}"/>
                             </f:facet>
-                            <h:outputText value="#{item.investigadorIdentificacion}"/>
+                            <h:outputText value="#{item.investigadorIdentificacion.toString()}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListPonenciaAutorTitle_ponenciaId}"/>
                             </f:facet>
-                            <h:outputText value="#{item.ponenciaId}"/>
+                            <h:outputText value="#{item.ponenciaId.toString()}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{ponenciaAutorController.prepareCreate}" update=":PonenciaAutorCreateForm" oncomplete="PF('PonenciaAutorCreateDialog').show()"/>
