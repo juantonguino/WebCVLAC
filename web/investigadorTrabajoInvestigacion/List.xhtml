@@ -10,12 +10,12 @@
 
 
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListInvestigadorTrabajoInvestigacionTitle}"></h:outputText>
+            <h:outputText value="LISTA INVESTIGADOR TRABAJO DE INVESTIGACION"></h:outputText>
         </ui:define>
 
         <ui:define name="body">
             <h:form id="InvestigadorTrabajoInvestigacionListForm">
-                <p:panel header="#{bundle.ListInvestigadorTrabajoInvestigacionTitle}">
+                <p:panel header="LISTA INVESTIGADOR TRABAJO INVESTIGACION">
                     <p:dataTable id="datalist" value="#{investigadorTrabajoInvestigacionController.items}" var="item"
                                  selectionMode="single" selection="#{investigadorTrabajoInvestigacionController.selected}"
                                  paginator="true"

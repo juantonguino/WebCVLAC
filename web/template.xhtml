@@ -21,23 +21,31 @@
                 <h:form id="menuForm">
                     <p:menubar>
                         <p:menuitem value="#{bundle.Home}" outcome="/index.xhtml" icon="ui-icon-home"/>
-                        <p:submenu label="#{bundle.Maintenance}">
-                            <p:menuitem value="Articulo" outcome="/articulo/List.xhtml" />
-                            <p:menuitem value="Articulo Autor" outcome="/articuloAutor/List.xhtml" />
-                            <p:menuitem value="Editorial" outcome="/editorial/List.xhtml" />
-                            <p:menuitem value="Evento" outcome="/evento/List.xhtml" />
-                            <p:menuitem value="Investigador TrabajoInvestigacion" outcome="/investigadorTrabajoInvestigacion/List.xhtml" />
-                            <p:menuitem value="Libro" outcome="/libro/List.xhtml" />
-                            <p:menuitem value="Libro Autores" outcome="/libroAutores/List.xhtml" />
-                            <p:menuitem value="Nivel Formacion" outcome="/nivelFormacion/List.xhtml" />
-                            <p:menuitem value="Ponencia" outcome="/ponencia/List.xhtml" />
-                            <p:menuitem value="Ponencia Autor" outcome="/ponenciaAutor/List.xhtml" />
-                            <p:menuitem value="Revista" outcome="/revista/List.xhtml" />
-                            <p:menuitem value="Trabajo Investigacion" outcome="/trabajoInvestigacion/List.xhtml" />
+                        <p:menuitem value="Gurpo Investigacion" outcome="/gurpoInvestigacion/List.xhtml" />
+                        <p:submenu label="Gestion Investigadores">
+                            <p:menuitem value="Investigador" outcome="/investigador/List.xhtml" />
+                            <p:menuitem value="Nivel Formacion" outcome="/nivelFormacion/List.xhtml"/>
                             <p:menuitem value="Usuario" outcome="/usuario/List.xhtml" />
                         </p:submenu>
-                        <p:menuitem value="Gurpo Investigacion" outcome="/gurpoInvestigacion/List.xhtml" />
-                        <p:menuitem value="Investigador" outcome="/investigador/List.xhtml" />
+                        <p:submenu label="Gestion Trabajo de Investigacion">
+                            <p:menuitem value="Investigador TrabajoInvestigacion" outcome="/investigadorTrabajoInvestigacion/List.xhtml" />
+                            <p:menuitem value="Trabajo Investigacion" outcome="/trabajoInvestigacion/List.xhtml" />
+                        </p:submenu>
+                        <p:submenu label="Gestion Articulos">
+                            <p:menuitem value="Revista" outcome="/revista/List.xhtml" />
+                            <p:menuitem value="Articulo" outcome="/articulo/List.xhtml" />
+                            <p:menuitem value="Articulo Autor" outcome="/articuloAutor/List.xhtml" />
+                        </p:submenu>
+                        <p:submenu label="Gestion Libros">
+                            <p:menuitem value="Editorial" outcome="/editorial/List.xhtml" />
+                            <p:menuitem value="Libro" outcome="/libro/List.xhtml" />
+                            <p:menuitem value="Libro Autores" outcome="/libroAutores/List.xhtml" />
+                        </p:submenu>
+                        <p:submenu label="Gestion Ponencias">
+                            <p:menuitem value="Evento" outcome="/evento/List.xhtml" />
+                            <p:menuitem value="Ponencia" outcome="/ponencia/List.xhtml" />
+                            <p:menuitem value="Ponencia Autor" outcome="/ponenciaAutor/List.xhtml" />
+                        </p:submenu>
                     </p:menubar>
                 </h:form>
             </p:layoutUnit>
