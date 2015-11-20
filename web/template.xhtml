@@ -17,17 +17,15 @@
 
         <p:layout fullPage="true">
             <p:layoutUnit position="north" size="200" header="#{bundle.AppName}">
-                <p:graphicImage id="imagen" value="/cvlac.png" />
+                <p:graphicImage library="images" name="cvlac.png" style="margin-left: 270px"/>
                 <h:form id="menuForm">
                     <p:menubar>
-                        <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
+                        <p:menuitem value="#{bundle.Home}" outcome="/index.xhtml" icon="ui-icon-home"/>
                         <p:submenu label="#{bundle.Maintenance}">
                             <p:menuitem value="Articulo" outcome="/articulo/List.xhtml" />
                             <p:menuitem value="Articulo Autor" outcome="/articuloAutor/List.xhtml" />
                             <p:menuitem value="Editorial" outcome="/editorial/List.xhtml" />
                             <p:menuitem value="Evento" outcome="/evento/List.xhtml" />
-                            <p:menuitem value="Gurpo Investigacion" outcome="/gurpoInvestigacion/List.xhtml" />
-                            <p:menuitem value="Investigador" outcome="/investigador/List.xhtml" />
                             <p:menuitem value="Investigador TrabajoInvestigacion" outcome="/investigadorTrabajoInvestigacion/List.xhtml" />
                             <p:menuitem value="Libro" outcome="/libro/List.xhtml" />
                             <p:menuitem value="Libro Autores" outcome="/libroAutores/List.xhtml" />
@@ -38,6 +36,8 @@
                             <p:menuitem value="Trabajo Investigacion" outcome="/trabajoInvestigacion/List.xhtml" />
                             <p:menuitem value="Usuario" outcome="/usuario/List.xhtml" />
                         </p:submenu>
+                        <p:menuitem value="Gurpo Investigacion" outcome="/gurpoInvestigacion/List.xhtml" />
+                        <p:menuitem value="Investigador" outcome="/investigador/List.xhtml" />
                     </p:menubar>
                 </h:form>
             </p:layoutUnit>
